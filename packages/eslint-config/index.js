@@ -22,6 +22,16 @@ module.export = {
         "unused-imports",
         "json",
     ],
+    overrides: [
+        {
+            parserOptions: {
+                tsconfigRootDir: process.cwd(),
+                project: ["./tsconfig.json"],
+            },
+            parser: "@typescript-eslint/parser",
+            files: ["*.ts", "*.tsx", "*.mts", "*.cts"],
+        },
+    ],
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
