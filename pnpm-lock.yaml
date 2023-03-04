@@ -22,6 +22,7 @@ importers:
       eslint-plugin-promise: ^6.1.1
       eslint-plugin-unicorn: ^46.0.0
       eslint-plugin-unused-imports: ^2.0.0
+      typescript: ^4.9.5
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.54.0_6mj2wypvdnknez7kws2nfdgupi
       '@typescript-eslint/parser': 5.54.0_ycpbpc6yetojsgtrx3mwntkhsu
@@ -33,6 +34,7 @@ importers:
       eslint-plugin-promise: 6.1.1_eslint@8.35.0
       eslint-plugin-unicorn: 46.0.0_eslint@8.35.0
       eslint-plugin-unused-imports: 2.0.0_hlu2tevvfejtijvruutuci6rky
+      typescript: 4.9.5
 
 packages:
 
