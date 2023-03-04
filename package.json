@@ -1,0 +1,15 @@
+{
+    "name": "@banjoanton/eslint-config-monorepo",
+    "description": "My ESlint config",
+    "repository": "banjo/eslint-config",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": "true",
+    "scripts": {
+        "release": "bumpp -r --all && pnpm -r publish"
+    },
+    "devDependencies": {
+        "bumpp": "^9.0.0",
+        "pnpm": "^7.28.0"
+    }
+}
