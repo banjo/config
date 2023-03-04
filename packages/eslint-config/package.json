@@ -1,6 +1,6 @@
 {
     "name": "@banjoanton/eslint-config",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "My ESLint config",
     "repository": "banjo/eslint-config",
     "main": "index.js",
@@ -14,7 +14,7 @@
         "eslint-plugin-n": "^15.6.1",
         "eslint-plugin-promise": "^6.1.1",
         "eslint-plugin-unicorn": "^46.0.0",
-        "eslint-plugin-unused-imports": "^2.0.0",
+        "eslint-plugin-unused-imports": "^2.0.0"
     },
     "peerDependencies": {
         "typescript": "^4.9.5",
