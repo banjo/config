@@ -5,11 +5,9 @@ importers:
   .:
     specifiers:
       bumpp: ^9.0.0
-      eslint-plugin-banjo: workspace:^0.1.0
       pnpm: ^7.28.0
     devDependencies:
       bumpp: 9.0.0
-      eslint-plugin-banjo: link:packages/eslint-plugin-banjo
       pnpm: 7.28.0
 
   packages/eslint-config:
@@ -19,6 +17,7 @@ importers:
       '@typescript-eslint/parser': ^5.54.0
       eslint: ^8.35.0
       eslint-import-resolver-typescript: ^3.5.3
+      eslint-plugin-banjo: workspace:*
       eslint-plugin-import: ^2.27.5
       eslint-plugin-json: ^3.1.0
       eslint-plugin-n: ^15.6.1
@@ -32,6 +31,7 @@ importers:
       '@typescript-eslint/parser': 5.54.0_ycpbpc6yetojsgtrx3mwntkhsu
       eslint: 8.35.0
       eslint-import-resolver-typescript: 3.5.3_yckic57kx266ph64dhq6ozvb54
+      eslint-plugin-banjo: link:../eslint-plugin-banjo
       eslint-plugin-import: 2.27.5_tqrcrxlenpngfto46ddarus52y
       eslint-plugin-json: 3.1.0
       eslint-plugin-n: 15.6.1_eslint@8.35.0
