@@ -26,7 +26,6 @@ Add the following to your `package.json` file. The ESlint extension includes mat
 
 ```json
 {
-    //...
     "prettier": "@banjoanton/prettier-config"
 }
 ```
