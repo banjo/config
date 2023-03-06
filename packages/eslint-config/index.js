@@ -21,6 +21,7 @@ module.exports = {
         "promise",
         "unused-imports",
         "json",
+        "banjo",
     ],
     parserOptions: {
         ecmaVersion: "latest",
@@ -32,15 +33,7 @@ module.exports = {
             node: true,
         },
     },
-    ignorePatterns: [
-        "node_modules",
-        "dist",
-        "build",
-        "coverage",
-        "libby",
-        ".eslintrc.js",
-        ".*",
-    ],
+    ignorePatterns: ["node_modules", "dist", "build", "coverage", "libby"],
     rules: {
         // typescript
         "no-unused-vars": "off",
@@ -113,5 +106,15 @@ module.exports = {
         "n/no-unsupported-features/es-syntax": "off",
         "n/no-process-exit": "off",
         "n/shebang": "off",
+        // banjo
+        "banjo/module-exports": "error",
     },
+    overrides: [
+        {
+            files: [".*"],
+            rules: {
+                "unicorn/prefer-module": "off",
+            },
+        },
+    ],
 };

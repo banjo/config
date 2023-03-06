@@ -7,6 +7,7 @@
     "license": "MIT",
     "dependencies": {
         "@banjoanton/eslint-config-prettier": "workspace:*",
+        "eslint-plugin-banjo": "workspace:*",
         "@typescript-eslint/eslint-plugin": "^5.54.0",
         "@typescript-eslint/parser": "^5.54.0",
         "eslint-import-resolver-typescript": "^3.5.3",
