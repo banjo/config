@@ -32,7 +32,15 @@ module.exports = {
             node: true,
         },
     },
-    ignorePatterns: ["node_modules", "dist", "build", "coverage", "libby"],
+    ignorePatterns: [
+        "node_modules",
+        "dist",
+        "build",
+        "coverage",
+        "libby",
+        ".eslintrc.js",
+        ".*",
+    ],
     rules: {
         // typescript
         "no-unused-vars": "off",
