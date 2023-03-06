@@ -17,4 +17,4 @@ Add this to your eslint file:
 {
     "extends": ["@banjoanton/eslint-config"]
 }
-```
+```  

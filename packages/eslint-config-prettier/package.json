@@ -1,0 +1,17 @@
+{
+    "name": "@banjoanton/eslint-config-prettier",
+    "version": "0.1.0",
+    "description": "My ESLint config that can be used with Prettier",
+    "main": "index.js",
+    "private": false,
+    "dependencies": {
+        "@banjoanton/prettier-config": "workspace:*",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-prettier": "^4.2.1"
+    },
+    "license": "MIT",
+    "peerDependencies": {
+        "eslint": "^8.35.0",
+        "prettier": "^2.8.4"
+    }
+}

@@ -71,6 +71,7 @@ module.exports = {
         "no-useless-return": "warn",
         "prefer-arrow-callback": "warn",
         "prefer-const": "warn",
+        "prefer-template": "warn",
         "sort-imports": [
             "warn",
             {

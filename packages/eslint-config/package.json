@@ -1,11 +1,12 @@
 {
     "name": "@banjoanton/eslint-config",
-    "version": "0.0.6",
+    "version": "0.1.0",
     "description": "My ESLint config",
     "repository": "banjo/eslint-config",
     "main": "index.js",
     "license": "MIT",
     "dependencies": {
+        "@banjoanton/eslint-config-prettier": "workspace:*",
         "@typescript-eslint/eslint-plugin": "^5.54.0",
         "@typescript-eslint/parser": "^5.54.0",
         "eslint-import-resolver-typescript": "^3.5.3",
