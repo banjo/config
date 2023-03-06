@@ -16,7 +16,6 @@ To apply `prettier`, in your `package.json`:
 
 ```json
 {
-    //...
     "prettier": "@banjoanton/prettier-config"
 }
 ```
