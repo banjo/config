@@ -21,6 +21,7 @@
     "devDependencies": {
         "@types/node": "^18.14.6",
         "unbuild": "^1.1.2",
-        "vitest": "^0.28.5"
+        "vitest": "^0.28.5",
+        "rimraf": "^4.3.1"
     }
 }
