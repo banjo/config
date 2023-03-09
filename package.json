@@ -2,7 +2,7 @@
     "name": "@banjoanton/eslint-config-monorepo",
     "description": "My ESlint config",
     "repository": "banjo/eslint-config",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "license": "MIT",
     "private": "true",
     "scripts": {
