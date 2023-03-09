@@ -33,7 +33,16 @@ module.exports = {
             node: true,
         },
     },
-    ignorePatterns: ["node_modules", "dist", "build", "coverage", "libby"],
+    ignorePatterns: [
+        "node_modules",
+        "dist",
+        "build",
+        "coverage",
+        "libby",
+        ".github",
+        ".*",
+        "*.md",
+    ],
     rules: {
         // typescript
         "no-unused-vars": "off",
@@ -114,6 +123,7 @@ module.exports = {
             files: [".*.js", "*config.js"],
             rules: {
                 "unicorn/prefer-module": "off",
+                "banjo/module-exports": "error",
             },
         },
     ],
