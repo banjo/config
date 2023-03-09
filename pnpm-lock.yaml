@@ -15,6 +15,7 @@ importers:
       '@banjoanton/eslint-config-prettier': workspace:*
       '@typescript-eslint/eslint-plugin': ^5.54.0
       '@typescript-eslint/parser': ^5.54.0
+      bumpp: ^9.0.0
       eslint: ^8.35.0
       eslint-import-resolver-typescript: ^3.5.3
       eslint-plugin-banjo: workspace:*
@@ -39,6 +40,8 @@ importers:
       eslint-plugin-unicorn: 46.0.0_eslint@8.35.0
       eslint-plugin-unused-imports: 2.0.0_hlu2tevvfejtijvruutuci6rky
       typescript: 4.9.5
+    devDependencies:
+      bumpp: 9.0.0
 
   packages/eslint-config-prettier:
     specifiers:

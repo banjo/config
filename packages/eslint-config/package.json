@@ -1,16 +1,16 @@
 {
     "name": "@banjoanton/eslint-config",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "My ESLint config",
     "repository": "banjo/eslint-config",
     "main": "index.js",
     "license": "MIT",
     "dependencies": {
         "@banjoanton/eslint-config-prettier": "workspace:*",
-        "eslint-plugin-banjo": "workspace:*",
         "@typescript-eslint/eslint-plugin": "^5.54.0",
         "@typescript-eslint/parser": "^5.54.0",
         "eslint-import-resolver-typescript": "^3.5.3",
+        "eslint-plugin-banjo": "workspace:*",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-json": "^3.1.0",
         "eslint-plugin-n": "^15.6.1",
@@ -18,8 +18,14 @@
         "eslint-plugin-unicorn": "^46.0.0",
         "eslint-plugin-unused-imports": "^2.0.0"
     },
+    "scripts": {
+        "release": "bumpp --all && pnpm publish"
+    },
     "peerDependencies": {
-        "typescript": "^4.9.5",
-        "eslint": "^8.35.0"
+        "eslint": "^8.35.0",
+        "typescript": "^4.9.5"
+    },
+    "devDependencies": {
+        "bumpp": "^9.0.0"
     }
 }
