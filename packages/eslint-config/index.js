@@ -107,6 +107,7 @@ module.exports = {
             },
         ],
         "unicorn/prefer-ternary": "off",
+        "unicorn/prevent-abbreviations": "off",
         // import
         "import/no-unresolved": "error",
         "import/named": "off",
