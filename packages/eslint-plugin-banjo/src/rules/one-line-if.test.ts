@@ -49,3 +49,27 @@ it("tooLongIf", () => {
         })),
     });
 });
+
+const validBraces = [`if (true) { return; } else { return; }`];
+
+const invalidBraces = [
+    [
+        "if (true) return; else return;",
+        "if (true) {\n\treturn;\n} else {\n\treturn;\n}",
+    ],
+];
+
+it("braces", () => {
+    const ruleTester: RuleTester = new RuleTester({
+        parser: require.resolve("@typescript-eslint/parser"),
+    });
+
+    ruleTester.run(RULE_NAME, rule, {
+        valid: validBraces,
+        invalid: invalidBraces.map((i) => ({
+            code: i[0],
+            output: i[1],
+            errors: [{ messageId: "braces" }],
+        })),
+    });
+});

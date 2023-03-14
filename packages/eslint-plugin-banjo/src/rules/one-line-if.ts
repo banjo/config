@@ -1,7 +1,7 @@
 import { createEslintRule } from "../utils";
 
 export const RULE_NAME = "one-line-if";
-export type MessageIds = "oneLineIf" | "tooLongIf";
+export type MessageIds = "oneLineIf" | "tooLongIf" | "braces";
 export type Options = [];
 
 export default createEslintRule<Options, MessageIds>({
@@ -17,20 +17,29 @@ export default createEslintRule<Options, MessageIds>({
         messages: {
             oneLineIf: "Short if statements should be on one line",
             tooLongIf: "If statement is too long to be on one line",
+            braces: "If statement should have curly braces if else is present",
         },
     },
     defaultOptions: [],
 
     create: (context) => {
-        const thresholdForExpression = 70;
+        const thresholdForExpression = 50;
         const sourceCode = context.getSourceCode();
 
-        const shouldBeOneLine = ({ consequent, hasCurlyBraces, oneLineIf }) => {
+        const shouldBeOneLine = ({
+            consequent,
+            hasCurlyBraces,
+            oneLineIf,
+            isSingleIf,
+            hasParentIf,
+        }) => {
             return (
                 oneLineIf.length < thresholdForExpression &&
                 hasCurlyBraces &&
                 consequent.type === "BlockStatement" &&
-                consequent.body.length === 1
+                consequent.body.length === 1 &&
+                isSingleIf &&
+                !hasParentIf
             );
         };
 
@@ -62,9 +71,11 @@ export default createEslintRule<Options, MessageIds>({
                 const testCode = sourceCode.getText(node.test);
                 const ifCode = sourceCode.getText(node);
 
-                const hasCurlyBraces =
-                    consequentCode.startsWith("{") &&
-                    consequentCode.endsWith("}");
+                const isSingleIf = node.alternate === null;
+                const hasParentIf = node?.parent?.type === "IfStatement";
+
+                const hasCurlyBraces = (code: string) =>
+                    code.startsWith("{") && code.endsWith("}");
 
                 const oneLineIf = possibleOneLineIf({
                     consequentCode,
@@ -74,8 +85,10 @@ export default createEslintRule<Options, MessageIds>({
                 if (
                     shouldBeOneLine({
                         consequent,
-                        hasCurlyBraces,
+                        hasCurlyBraces: hasCurlyBraces(consequentCode),
                         oneLineIf,
+                        isSingleIf,
+                        hasParentIf,
                     })
                 ) {
                     context.report({
@@ -88,17 +101,37 @@ export default createEslintRule<Options, MessageIds>({
                     return;
                 }
 
+                const isOneLineIfWithElse =
+                    !isSingleIf && !hasCurlyBraces(consequentCode);
+
                 if (
                     shouldHaveCurlyBraces({
                         consequent,
-                        hasCurlyBraces,
+                        hasCurlyBraces: hasCurlyBraces(consequentCode),
                         ifCode,
-                    })
+                    }) ||
+                    isOneLineIfWithElse
                 ) {
-                    const toReturn = `if (${testCode}) {\n\t${consequentCode}\n}`;
+                    let toReturn = `if (${testCode}) {\n\t${consequentCode}\n}`;
+
+                    if (node.alternate) {
+                        const alternateSourceCode = sourceCode.getText(
+                            node.alternate
+                        );
+
+                        const isNotIf = node.alternate.type !== "IfStatement";
+                        const hasCurly = hasCurlyBraces(alternateSourceCode);
+
+                        if (isNotIf && !hasCurly) {
+                            toReturn += ` else {\n\t${alternateSourceCode}\n}`;
+                        } else {
+                            toReturn += ` else ${alternateSourceCode}`;
+                        }
+                    }
+
                     context.report({
                         node,
-                        messageId: "tooLongIf",
+                        messageId: isSingleIf ? "tooLongIf" : "braces",
                         fix: (fixer) => {
                             return fixer.replaceText(node, toReturn);
                         },

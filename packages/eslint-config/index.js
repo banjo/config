@@ -118,7 +118,7 @@ module.exports = {
         "n/shebang": "off",
         // banjo
         "banjo/module-exports": "error",
-        "banjo/one-line-if": "error",
+        "banjo/one-line-if": "warn",
     },
     overrides: [
         {
