@@ -19,7 +19,7 @@
         "eslint-plugin-unused-imports": "^2.0.0"
     },
     "scripts": {
-        "release": "bumpp --all && pnpm publish"
+        "release": "bumpp --no-tag --no-commit --all && pnpm publish"
     },
     "peerDependencies": {
         "eslint": "^8.35.0",
