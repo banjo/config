@@ -47,6 +47,7 @@ module.exports = {
         // typescript
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/ban-ts-comment": "off",
         // eslint
         camelcase: ["warn", { properties: "never" }],
         "array-callback-return": "warn",
@@ -108,6 +109,7 @@ module.exports = {
         ],
         "unicorn/prefer-ternary": "off",
         "unicorn/prevent-abbreviations": "off",
+        "unicorn/prefer-module": "off",
         // import
         "import/no-unresolved": "error",
         "import/named": "off",
