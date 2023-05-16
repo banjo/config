@@ -17,12 +17,12 @@
         "release": "bumpp --no-tag --no-commit --all && pnpm publish"
     },
     "dependencies": {
-        "@typescript-eslint/utils": "^5.54.1"
+        "@typescript-eslint/utils": "^5.59.6"
     },
     "devDependencies": {
-        "@types/node": "^18.14.6",
-        "unbuild": "^1.1.2",
-        "vitest": "^0.28.5",
-        "rimraf": "^4.3.1"
+        "@types/node": "^18.16.10",
+        "rimraf": "^4.4.1",
+        "unbuild": "^1.2.1",
+        "vitest": "^0.28.5"
     }
 }

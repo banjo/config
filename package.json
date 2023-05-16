@@ -9,7 +9,7 @@
         "release": "bumpp -r --all && pnpm -r publish"
     },
     "devDependencies": {
-        "bumpp": "^9.0.0",
-        "pnpm": "^7.28.0"
+        "bumpp": "^9.1.0",
+        "pnpm": "^7.32.4"
     }
 }
