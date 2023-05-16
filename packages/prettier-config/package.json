@@ -7,5 +7,8 @@
     "peerDependencies": {
         "prettier": "^2.8.8"
     },
+    "scripts": {
+        "release": "bumpp --no-tag --no-commit --all && pnpm publish"
+    },
     "license": "MIT"
 }
