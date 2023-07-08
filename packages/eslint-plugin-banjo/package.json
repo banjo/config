@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-banjo",
-    "version": "0.1.6",
+    "version": "0.1.9",
     "license": "MIT",
     "homepage": "https://github.com/banjo/config",
     "main": "./dist/index.cjs",
