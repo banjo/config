@@ -1,6 +1,6 @@
 {
     "name": "@banjoanton/prettier-config",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "description": "My prettier config",
     "main": "index.js",
     "private": false,
