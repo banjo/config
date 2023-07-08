@@ -4,7 +4,7 @@
     "description": "My ESLint config that can be used with Prettier",
     "main": "index.js",
     "private": false,
-    "d;ependencies": {
+    "dependencies": {
         "@banjoanton/prettier-config": "workspace:*",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "5.0.0-alpha.2"
