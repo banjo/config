@@ -110,6 +110,7 @@ module.exports = {
         "unicorn/prefer-ternary": "off",
         "unicorn/prevent-abbreviations": "off",
         "unicorn/prefer-module": "off",
+        "unicorn/prefer-top-level-await": "off",
         // import
         "import/no-unresolved": "error",
         "import/named": "off",
