@@ -111,6 +111,7 @@ module.exports = {
         "unicorn/prevent-abbreviations": "off",
         "unicorn/prefer-module": "off",
         "unicorn/prefer-top-level-await": "off",
+        "unicorn/no-useless-undefined": "off",
         // import
         "import/no-unresolved": "error",
         "import/named": "off",
