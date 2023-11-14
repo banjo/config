@@ -46,10 +46,13 @@ module.exports = {
     rules: {
         // typescript
         "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/no-unused-vars": ["warn"],
         "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-empty-function": "off",
         // eslint
         camelcase: ["warn", { properties: "never" }],
+        "consistent-return": "off",
+        "require-await": "off",
         "array-callback-return": "warn",
         "no-constant-condition": "warn",
         "no-duplicate-imports": "warn",
@@ -112,6 +115,7 @@ module.exports = {
         "unicorn/prefer-module": "off",
         "unicorn/prefer-top-level-await": "off",
         "unicorn/no-useless-undefined": "off",
+        "unicorn/consistent-function-scoping": "warn",
         // import
         "import/no-unresolved": "error",
         "import/named": "off",
@@ -123,6 +127,8 @@ module.exports = {
         // banjo
         "banjo/module-exports": "error",
         "banjo/one-line-if": "off",
+        // promise
+        "promise/always-return": "off",
     },
     overrides: [
         {
