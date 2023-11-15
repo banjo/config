@@ -56,7 +56,8 @@ module.exports = {
         "array-callback-return": "warn",
         "no-constant-condition": "warn",
         "no-duplicate-imports": "warn",
-        "object-shorthand": "error",
+        "object-shorthand": "warn",
+        "arrow-body-style": "warn",
         "no-unmodified-loop-condition": "warn",
         "no-use-before-define": [
             "error",
