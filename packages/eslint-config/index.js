@@ -118,6 +118,7 @@ module.exports = {
         "unicorn/prefer-top-level-await": "off",
         "unicorn/no-useless-undefined": "off",
         "unicorn/consistent-function-scoping": "warn",
+        "unicorn/no-array-reduce": "warn",
         // import
         "import/no-unresolved": "error",
         "import/named": "off",
