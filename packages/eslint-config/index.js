@@ -119,6 +119,7 @@ module.exports = {
         "unicorn/no-useless-undefined": "off",
         "unicorn/consistent-function-scoping": "warn",
         "unicorn/no-array-reduce": "warn",
+        "unicorn/no-array-callback-reference": "off",
         // import
         "import/no-unresolved": "error",
         "import/named": "off",
