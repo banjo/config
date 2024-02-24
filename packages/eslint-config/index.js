@@ -46,9 +46,10 @@ module.exports = {
     rules: {
         // typescript
         "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": ["warn"],
+        "@typescript-eslint/no-unused-vars": "warn",
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-namespace": "off",
         // eslint
         camelcase: ["warn", { properties: "never" }],
         "consistent-return": "off",
@@ -69,14 +70,12 @@ module.exports = {
             },
         ],
         "require-atomic-updates": "warn",
-        "require-await": "error",
         complexity: ["warn", 15],
-        "consistent-return": "warn",
         "dot-notation": "warn",
         eqeqeq: ["error", "always"],
         "max-params": ["error", 3],
         "no-else-return": "warn",
-        "no-empty-function": "warn",
+        "no-empty-function": "off",
         "no-lonely-if": "warn",
         "no-multi-assign": "warn",
         "no-nested-ternary": "error",
@@ -117,22 +116,25 @@ module.exports = {
         "unicorn/prefer-module": "off",
         "unicorn/prefer-top-level-await": "off",
         "unicorn/no-useless-undefined": "off",
-        "unicorn/consistent-function-scoping": "warn",
+        "unicorn/consistent-function-scoping": "off",
         "unicorn/no-array-reduce": "warn",
         "unicorn/no-array-callback-reference": "off",
         // import
-        "import/no-unresolved": "error",
         "import/named": "off",
+        "import/no-unresolved": "off",
         // n
         "n/no-missing-import": "off",
         "n/no-unsupported-features/es-syntax": "off",
         "n/no-process-exit": "off",
         "n/shebang": "off",
+        "n/no-unpublished-import": "off",
+        "n/no-unsupported-features/node-builtins": "off",
         // banjo
         "banjo/module-exports": "error",
         "banjo/one-line-if": "off",
         // promise
         "promise/always-return": "off",
+        "no-unused-vars": "off",
     },
     overrides: [
         {
