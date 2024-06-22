@@ -33,16 +33,7 @@ module.exports = {
             node: true,
         },
     },
-    ignorePatterns: [
-        "node_modules",
-        "dist",
-        "build",
-        "coverage",
-        "libby",
-        ".github",
-        ".*",
-        "*.md",
-    ],
+    ignorePatterns: ["node_modules", "dist", "build", "coverage", "libby", ".github", ".*", "*.md"],
     rules: {
         // typescript
         "no-unused-vars": "off",
@@ -50,9 +41,11 @@ module.exports = {
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-explicit-any": "warn",
         // eslint
         camelcase: ["warn", { properties: "never" }],
         "consistent-return": "off",
+        "max-params": "warn",
         "require-await": "off",
         "array-callback-return": "warn",
         "no-constant-condition": "warn",
@@ -119,6 +112,9 @@ module.exports = {
         "unicorn/consistent-function-scoping": "off",
         "unicorn/no-array-reduce": "warn",
         "unicorn/no-array-callback-reference": "off",
+        "unicorn/prefer-query-selector": "warn",
+        "unicorn/no-array-for-each": "off",
+        "unicorn/prefer-modern-dom-apis": "warn",
         // import
         "import/named": "off",
         "import/no-unresolved": "off",
@@ -134,7 +130,6 @@ module.exports = {
         "banjo/one-line-if": "off",
         // promise
         "promise/always-return": "off",
-        "no-unused-vars": "off",
     },
     overrides: [
         {

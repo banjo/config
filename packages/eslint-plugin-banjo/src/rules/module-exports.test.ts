@@ -13,7 +13,7 @@ it("runs", () => {
 
     ruleTester.run(RULE_NAME, rule, {
         valid: valids,
-        invalid: invalids.map((i) => ({
+        invalid: invalids.map(i => ({
             code: i[0],
             output: i[1],
             errors: [{ messageId: "moduleExports" }],

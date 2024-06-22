@@ -16,7 +16,7 @@ it("oneLineIf", () => {
 
     ruleTester.run(RULE_NAME, rule, {
         valid: valids,
-        invalid: invalids.map((i) => ({
+        invalid: invalids.map(i => ({
             code: i[0],
             output: i[1],
             errors: [{ messageId: "oneLineIf" }],
@@ -42,7 +42,7 @@ it("tooLongIf", () => {
 
     ruleTester.run(RULE_NAME, rule, {
         valid: validTooLongIfs,
-        invalid: invalidTooLongIfs.map((i) => ({
+        invalid: invalidTooLongIfs.map(i => ({
             code: i[0],
             output: i[1],
             errors: [{ messageId: "tooLongIf" }],
@@ -53,10 +53,7 @@ it("tooLongIf", () => {
 const validBraces = [`if (true) { return; } else { return; }`];
 
 const invalidBraces = [
-    [
-        "if (true) return; else return;",
-        "if (true) {\n\treturn;\n} else {\n\treturn;\n}",
-    ],
+    ["if (true) return; else return;", "if (true) {\n\treturn;\n} else {\n\treturn;\n}"],
 ];
 
 it("braces", () => {
@@ -66,7 +63,7 @@ it("braces", () => {
 
     ruleTester.run(RULE_NAME, rule, {
         valid: validBraces,
-        invalid: invalidBraces.map((i) => ({
+        invalid: invalidBraces.map(i => ({
             code: i[0],
             output: i[1],
             errors: [{ messageId: "braces" }],

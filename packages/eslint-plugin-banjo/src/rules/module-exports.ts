@@ -20,9 +20,9 @@ export default createEslintRule<Options, MessageIds>({
     },
     defaultOptions: [],
 
-    create: (context) => {
+    create: context => {
         return {
-            AssignmentExpression: (node) => {
+            AssignmentExpression: node => {
                 if (node.left.type !== "MemberExpression") return;
                 if (node.left.object.type !== "Identifier") return;
                 if (node.left.property.type !== "Identifier") return;
@@ -38,18 +38,12 @@ export default createEslintRule<Options, MessageIds>({
                             end: node.loc.start,
                         },
                         messageId: "moduleExports",
-                        fix: (fixer) => {
-                            if (node.left.type !== "MemberExpression")
-                                return null;
-                            if (node.left.object.type !== "Identifier")
-                                return null;
-                            if (node.left.property.type !== "Identifier")
-                                return null;
+                        fix: fixer => {
+                            if (node.left.type !== "MemberExpression") return null;
+                            if (node.left.object.type !== "Identifier") return null;
+                            if (node.left.property.type !== "Identifier") return null;
 
-                            return fixer.replaceText(
-                                node.left.property,
-                                "exports"
-                            );
+                            return fixer.replaceText(node.left.property, "exports");
                         },
                     });
                 }

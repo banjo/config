@@ -1,15 +1,18 @@
 {
     "name": "@banjoanton/eslint-config-monorepo",
     "description": "My ESlint config",
-    "repository": "banjo/eslint-config",
     "version": "0.1.10",
     "license": "MIT",
     "private": "true",
     "scripts": {
-        "release": "bumpp -r --all && pnpm -r publish"
+        "release": "bumpp -r --all && pnpm -r publish",
+        "format": "prettier --write ."
     },
     "devDependencies": {
         "bumpp": "^9.1.1",
-        "pnpm": "^7.33.3"
-    }
+        "pnpm": "^7.33.3",
+        "prettier": "^3.3.2",
+        "@banjoanton/prettier-config": "workspace:*"
+    },
+    "prettier": "@banjoanton/prettier-config"
 }

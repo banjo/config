@@ -22,7 +22,7 @@ export default createEslintRule<Options, MessageIds>({
     },
     defaultOptions: [],
 
-    create: (context) => {
+    create: context => {
         const thresholdForExpression = 50;
         const sourceCode = context.getSourceCode();
 
@@ -43,11 +43,7 @@ export default createEslintRule<Options, MessageIds>({
             );
         };
 
-        const shouldHaveCurlyBraces = ({
-            consequent,
-            hasCurlyBraces,
-            ifCode,
-        }) => {
+        const shouldHaveCurlyBraces = ({ consequent, hasCurlyBraces, ifCode }) => {
             return (
                 !hasCurlyBraces &&
                 ifCode.length > thresholdForExpression &&
@@ -56,16 +52,13 @@ export default createEslintRule<Options, MessageIds>({
         };
 
         const possibleOneLineIf = ({ consequentCode, testCode }) => {
-            const consequentWithoutBraces = consequentCode.slice(
-                1,
-                consequentCode.length - 1
-            );
+            const consequentWithoutBraces = consequentCode.slice(1, consequentCode.length - 1);
 
             return `if (${testCode}) ${consequentWithoutBraces.trim()}`;
         };
 
         return {
-            IfStatement: (node) => {
+            IfStatement: node => {
                 const consequent = node.consequent;
                 const consequentCode = sourceCode.getText(consequent);
                 const testCode = sourceCode.getText(node.test);
@@ -74,8 +67,7 @@ export default createEslintRule<Options, MessageIds>({
                 const isSingleIf = node.alternate === null;
                 const hasParentIf = node?.parent?.type === "IfStatement";
 
-                const hasCurlyBraces = (code: string) =>
-                    code.startsWith("{") && code.endsWith("}");
+                const hasCurlyBraces = (code: string) => code.startsWith("{") && code.endsWith("}");
 
                 const oneLineIf = possibleOneLineIf({
                     consequentCode,
@@ -94,15 +86,14 @@ export default createEslintRule<Options, MessageIds>({
                     context.report({
                         node,
                         messageId: "oneLineIf",
-                        fix: (fixer) => {
+                        fix: fixer => {
                             return fixer.replaceText(node, oneLineIf);
                         },
                     });
                     return;
                 }
 
-                const isOneLineIfWithElse =
-                    !isSingleIf && !hasCurlyBraces(consequentCode);
+                const isOneLineIfWithElse = !isSingleIf && !hasCurlyBraces(consequentCode);
 
                 if (
                     shouldHaveCurlyBraces({
@@ -115,9 +106,7 @@ export default createEslintRule<Options, MessageIds>({
                     let toReturn = `if (${testCode}) {\n\t${consequentCode}\n}`;
 
                     if (node.alternate) {
-                        const alternateSourceCode = sourceCode.getText(
-                            node.alternate
-                        );
+                        const alternateSourceCode = sourceCode.getText(node.alternate);
 
                         const isNotIf = node.alternate.type !== "IfStatement";
                         const hasCurly = hasCurlyBraces(alternateSourceCode);
@@ -132,7 +121,7 @@ export default createEslintRule<Options, MessageIds>({
                     context.report({
                         node,
                         messageId: isSingleIf ? "tooLongIf" : "braces",
-                        fix: (fixer) => {
+                        fix: fixer => {
                             return fixer.replaceText(node, toReturn);
                         },
                     });
