@@ -45,7 +45,6 @@ module.exports = {
         // eslint
         camelcase: ["warn", { properties: "never" }],
         "consistent-return": "off",
-        "max-params": "warn",
         "require-await": "off",
         "array-callback-return": "warn",
         "no-constant-condition": "warn",
@@ -66,7 +65,7 @@ module.exports = {
         complexity: ["warn", 15],
         "dot-notation": "warn",
         eqeqeq: ["error", "always"],
-        "max-params": ["error", 3],
+        "max-params": ["warn", 3],
         "no-else-return": "warn",
         "no-empty-function": "off",
         "no-lonely-if": "warn",
