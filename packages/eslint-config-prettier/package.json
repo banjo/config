@@ -1,6 +1,6 @@
 {
     "name": "@banjoanton/eslint-config-prettier",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "My ESLint config that can be used with Prettier",
     "type": "module",
     "main": "index.js",
