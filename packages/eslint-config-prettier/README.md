@@ -26,3 +26,11 @@ In the `eslint` config:
     "extends": ["@banjoanton/eslint-config-prettier"]
 }
 ```
+
+For eslint v9:
+
+```js
+import eslintConfig from "@banjoanton/eslint-config-prettier";
+
+export default [...eslintConfig];
+```

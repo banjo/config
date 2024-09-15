@@ -17,3 +17,11 @@ Add this to your eslint file:
     "extends": ["@banjoanton/eslint-config"]
 }
 ```
+
+For eslint v9:
+
+```js
+import eslintConfig from "@banjoanton/eslint-config";
+
+export default [...eslintConfig];
+```

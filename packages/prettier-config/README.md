@@ -27,3 +27,11 @@ To enable the `eslint` config:
     "extends": ["@banjoanton/eslint-config-prettier"]
 }
 ```
+
+To enable with v9:
+
+```js
+import prettierConfig from "@banjoanton/eslint-config-prettier";
+
+export default [...prettierConfig];
+```
