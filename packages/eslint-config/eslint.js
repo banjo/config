@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
 import js from "@eslint/js";
+import eslintConfigPrettier from "@banjoanton/eslint-config-prettier";
 
 const ERROR = "error";
 const WARN = "warn";
@@ -37,6 +38,7 @@ export const config = [
     // base config
     ...fixupConfigRules(compat.extends("eslint:recommended", "@banjoanton/eslint-config-prettier")),
 
+    eslintConfigPrettier,
     // all files
     {
         plugins: {
