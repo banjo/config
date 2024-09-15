@@ -32,7 +32,6 @@ export const config = [
             import: (await import("eslint-plugin-import-x")).default,
             banjo,
         },
-        extends: [],
         languageOptions: {
             globals: {
                 ...globals.browser,
