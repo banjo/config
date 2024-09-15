@@ -1,11 +1,8 @@
-import globals from "globals";
-import banjo from "eslint-plugin-banjo";
-import { FlatCompat } from "@eslint/eslintrc";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
-import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
-import js from "@eslint/js";
 import eslintConfigPrettier from "@banjoanton/eslint-config-prettier";
+import { fixupPluginRules } from "@eslint/compat";
+import js from "@eslint/js";
+import banjo from "eslint-plugin-banjo";
+import globals from "globals";
 
 const ERROR = "error";
 const WARN = "warn";
@@ -22,23 +19,13 @@ const has = pkg => {
 const hasTypeScript = has("typescript");
 const hasReact = has("react");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all,
-});
-
 export const config = [
     {
         ignores: ["**/.cache/**", "**/node_modules/**", "**/build/**", "**/dist/**"],
     },
 
-    // base config
-    ...fixupConfigRules(compat.extends("eslint:recommended", "@banjoanton/eslint-config-prettier")),
+    js.configs.recommended,
 
-    eslintConfigPrettier,
     // all files
     {
         plugins: {
@@ -144,6 +131,7 @@ export const config = [
               },
           }
         : null,
+    eslintConfigPrettier, // should be last
 ].filter(Boolean);
 
 // this is for backward compatibility
