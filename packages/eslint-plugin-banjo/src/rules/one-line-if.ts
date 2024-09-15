@@ -32,24 +32,18 @@ export default createEslintRule<Options, MessageIds>({
             oneLineIf,
             isSingleIf,
             hasParentIf,
-        }) => {
-            return (
-                oneLineIf.length < thresholdForExpression &&
-                hasCurlyBraces &&
-                consequent.type === "BlockStatement" &&
-                consequent.body.length === 1 &&
-                isSingleIf &&
-                !hasParentIf
-            );
-        };
+        }) =>
+            oneLineIf.length < thresholdForExpression &&
+            hasCurlyBraces &&
+            consequent.type === "BlockStatement" &&
+            consequent.body.length === 1 &&
+            isSingleIf &&
+            !hasParentIf;
 
-        const shouldHaveCurlyBraces = ({ consequent, hasCurlyBraces, ifCode }) => {
-            return (
-                !hasCurlyBraces &&
-                ifCode.length > thresholdForExpression &&
-                consequent.type !== "BlockStatement"
-            );
-        };
+        const shouldHaveCurlyBraces = ({ consequent, hasCurlyBraces, ifCode }) =>
+            !hasCurlyBraces &&
+            ifCode.length > thresholdForExpression &&
+            consequent.type !== "BlockStatement";
 
         const possibleOneLineIf = ({ consequentCode, testCode }) => {
             const consequentWithoutBraces = consequentCode.slice(1, consequentCode.length - 1);
@@ -86,9 +80,7 @@ export default createEslintRule<Options, MessageIds>({
                     context.report({
                         node,
                         messageId: "oneLineIf",
-                        fix: fixer => {
-                            return fixer.replaceText(node, oneLineIf);
-                        },
+                        fix: fixer => fixer.replaceText(node, oneLineIf),
                     });
                     return;
                 }
@@ -121,9 +113,7 @@ export default createEslintRule<Options, MessageIds>({
                     context.report({
                         node,
                         messageId: isSingleIf ? "tooLongIf" : "braces",
-                        fix: fixer => {
-                            return fixer.replaceText(node, toReturn);
-                        },
+                        fix: fixer => fixer.replaceText(node, toReturn),
                     });
                 }
             },

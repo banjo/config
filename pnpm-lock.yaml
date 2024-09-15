@@ -13,8 +13,8 @@ importers:
         version: 9.10.0(jiti@1.21.6)
     devDependencies:
       '@banjoanton/eslint-config':
-        specifier: ^0.2.3
-        version: 0.2.3(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@1.21.6)))(eslint@9.10.0(jiti@1.21.6))(prettier@3.3.3)
+        specifier: workspace:*
+        version: link:packages/eslint-config
       '@banjoanton/prettier-config':
         specifier: workspace:*
         version: link:packages/prettier-config
@@ -33,15 +33,15 @@ importers:
       '@banjoanton/eslint-config-prettier':
         specifier: workspace:*
         version: link:../eslint-config-prettier
-      '@eslint/compat':
-        specifier: ^1.1.1
-        version: 1.1.1
       '@eslint/eslintrc':
         specifier: ^3.1.0
         version: 3.1.0
       '@eslint/js':
         specifier: ^9.10.0
         version: 9.10.0
+      '@typescript-eslint/parser':
+        specifier: ^8.5.0
+        version: 8.5.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
       eslint:
         specifier: ^9.10.0
         version: 9.10.0(jiti@1.21.6)
@@ -51,9 +51,6 @@ importers:
       eslint-plugin-import-x:
         specifier: ^4.2.1
         version: 4.2.1(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
-      eslint-plugin-prettier:
-        specifier: 5.2.1
-        version: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@1.21.6)))(eslint@9.10.0(jiti@1.21.6))(prettier@3.3.3)
       eslint-plugin-react:
         specifier: ^7.36.1
         version: 7.36.1(eslint@9.10.0(jiti@1.21.6))
@@ -198,22 +195,6 @@ packages:
   '@babel/types@7.25.6':
     resolution: {integrity: sha512-/l42B1qxpG6RdfYf343Uw1vmDjeNhneUXtzhojE7pDgfpEypmRhI6j1kr17XCVv4Cgl9HdAiQY2x0GwKm7rWCw==}
     engines: {node: '>=6.9.0'}
-
-  '@banjoanton/eslint-config-prettier@0.2.1':
-    resolution: {integrity: sha512-xcnHkdjpmDUxM4AlD7PzVcKAy/ZfalueCrML1gPfTAnRj/GdF9A+Y5xkhRkIC+RXEM4Y8WZkZKkkUNUGz7c/zA==}
-    peerDependencies:
-      eslint: ^9.10.0
-      prettier: ^3.0.0
-
-  '@banjoanton/eslint-config@0.2.3':
-    resolution: {integrity: sha512-8dnMuMoAmU0UB3sr9gr96nr+b6qgUWBPoLT2BSA+yySsFcKR8MMpQoTmDKVainxZMnWxeVbb6PI/qf6RYxodJg==}
-    peerDependencies:
-      eslint: ^9.10.0
-
-  '@banjoanton/prettier-config@0.1.10':
-    resolution: {integrity: sha512-3fSNkIcNn9p0BFXdMLQzbhtQYL7jYmmsTZU+d1MaMY9SX4YwxXSWPksh3WBMAJGUUlXETdEei5Vhg2noUJde3A==}
-    peerDependencies:
-      prettier: ^3.0.0
 
   '@esbuild/aix-ppc64@0.23.1':
     resolution: {integrity: sha512-6VhYk1diRqrhBAqpJEdjASR/+WVRtfjpqKuNw11cLiaWpAT/Uu+nokB+UJnevzy/P9C/ty6AOe0dwueMrGh/iQ==}
@@ -632,10 +613,6 @@ packages:
   '@eslint-community/regexpp@4.11.1':
     resolution: {integrity: sha512-m4DVN9ZqskZoLU5GlWZadwDnYo3vAEydiUayB9widCl9ffWx2IvPnp6n3on5rJmziJSw9Bv+Z3ChDVdMwXCY8Q==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
-
-  '@eslint/compat@1.1.1':
-    resolution: {integrity: sha512-lpHyRyplhGPL5mGEh6M9O5nnKk0Gz4bFI+Zu6tKlPpDUN7XshWvH9C/px4UVm87IAANE0W81CEsNGbS1KlzXpA==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/config-array@0.18.0':
     resolution: {integrity: sha512-fTxvnS1sRMu3+JjXwJG0j/i4RT9u4qJ+lqS/yCGap4lH4zZGzQ7tu+xZqQmcMZq5OBZDL4QRxQzRjkWcGt8IVw==}
@@ -1326,9 +1303,6 @@ packages:
 
   eslint-import-resolver-node@0.3.9:
     resolution: {integrity: sha512-WFj2isz22JahUv+B788TlO3N6zL3nNJGU8CcZbPZvVEkBPaJdCV4vy5wyghty5ROFbCRnm132v8BScu5/1BQ8g==}
-
-  eslint-plugin-banjo@0.1.10:
-    resolution: {integrity: sha512-GVq6CFcGxzZ4l/7jUWAqEqRtUD5bh+KmaAqjZS2NluXjxdCQyAJxNZ63oMDmF4PArt6CLPKthCUcP1sa5f7FGw==}
 
   eslint-plugin-import-x@4.2.1:
     resolution: {integrity: sha512-WWi2GedccIJa0zXxx3WDnTgouGQTtdYK1nhXMwywbqqAgB0Ov+p1pYBsWh3VaB0bvBOwLse6OfVII7jZD9xo5Q==}
@@ -2831,40 +2805,6 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@banjoanton/eslint-config-prettier@0.2.1(eslint@9.10.0(jiti@1.21.6))(prettier@3.3.3)':
-    dependencies:
-      '@banjoanton/prettier-config': 0.1.10(prettier@3.3.3)
-      eslint: 9.10.0(jiti@1.21.6)
-      eslint-config-prettier: 9.1.0(eslint@9.10.0(jiti@1.21.6))
-      eslint-plugin-prettier: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@1.21.6)))(eslint@9.10.0(jiti@1.21.6))(prettier@3.3.3)
-      prettier: 3.3.3
-    transitivePeerDependencies:
-      - '@types/eslint'
-
-  '@banjoanton/eslint-config@0.2.3(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@1.21.6)))(eslint@9.10.0(jiti@1.21.6))(prettier@3.3.3)':
-    dependencies:
-      '@banjoanton/eslint-config-prettier': 0.2.1(eslint@9.10.0(jiti@1.21.6))(prettier@3.3.3)
-      '@eslint/compat': 1.1.1
-      '@eslint/eslintrc': 3.1.0
-      '@eslint/js': 9.10.0
-      eslint: 9.10.0(jiti@1.21.6)
-      eslint-plugin-banjo: 0.1.10(eslint@9.10.0(jiti@1.21.6))
-      eslint-plugin-import-x: 4.2.1(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
-      eslint-plugin-prettier: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.10.0(jiti@1.21.6)))(eslint@9.10.0(jiti@1.21.6))(prettier@3.3.3)
-      eslint-plugin-react: 7.36.1(eslint@9.10.0(jiti@1.21.6))
-      eslint-plugin-react-hooks: 4.6.2(eslint@9.10.0(jiti@1.21.6))
-      globals: 15.9.0
-    transitivePeerDependencies:
-      - '@types/eslint'
-      - eslint-config-prettier
-      - prettier
-      - supports-color
-      - typescript
-
-  '@banjoanton/prettier-config@0.1.10(prettier@3.3.3)':
-    dependencies:
-      prettier: 3.3.3
-
   '@esbuild/aix-ppc64@0.23.1':
     optional: true
 
@@ -3075,8 +3015,6 @@ snapshots:
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.11.1': {}
-
-  '@eslint/compat@1.1.1': {}
 
   '@eslint/config-array@0.18.0':
     dependencies:
@@ -3995,14 +3933,6 @@ snapshots:
       resolve: 1.22.8
     transitivePeerDependencies:
       - supports-color
-
-  eslint-plugin-banjo@0.1.10(eslint@9.10.0(jiti@1.21.6)):
-    dependencies:
-      '@typescript-eslint/utils': 5.62.0(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2)
-    transitivePeerDependencies:
-      - eslint
-      - supports-color
-      - typescript
 
   eslint-plugin-import-x@4.2.1(eslint@9.10.0(jiti@1.21.6))(typescript@5.6.2):
     dependencies:

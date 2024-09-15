@@ -1,6 +1,6 @@
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
-export default [
+const config = [
     eslintPluginPrettierRecommended,
     {
         rules: {
@@ -8,3 +8,5 @@ export default [
         },
     },
 ];
+
+export default config;
