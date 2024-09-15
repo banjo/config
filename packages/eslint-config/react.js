@@ -56,7 +56,7 @@ export const reactConfig = [
             "react/no-adjacent-inline-elements": "warn",
             "react/no-did-mount-set-state": "warn",
             "react/no-did-update-set-state": "warn",
-            "react/no-multi-comp": "warn",
+            "react/no-multi-comp": "off",
             "react/no-namespace": "warn",
             "react/no-redundant-should-component-update": "warn",
             "react/no-this-in-sfc": "warn",

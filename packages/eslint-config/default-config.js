@@ -12,6 +12,7 @@ export const defaultConfig = [
             "**/.github",
             "**/.*",
             "**/*.md",
+            "*/*.config.{js,ts}",
         ],
     },
     {
