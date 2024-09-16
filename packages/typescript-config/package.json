@@ -1,0 +1,16 @@
+{
+    "name": "@banjoanton/typescript-config",
+    "version": "0.0.1",
+    "description": "My Typescript config",
+    "private": false,
+    "exports": {
+        ".": "./typescript.json"
+    },
+    "scripts": {
+        "release": "bumpp --no-tag --no-commit --all && pnpm publish"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^5.6.2"
+    }
+}

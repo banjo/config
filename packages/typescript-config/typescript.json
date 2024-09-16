@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "module": "preserve",
+        "target": "ES2022",
+        "strict": true,
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+        "noUncheckedIndexedAccess": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "moduleDetection": "force",
+        "verbatimModuleSyntax": true,
+        "noImplicitOverride": true
+    }
+}
