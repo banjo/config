@@ -1,7 +1,7 @@
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 
-export const reactConfig = [
+export default [
     {
         files: ["**/*.jsx", "**/*.tsx"],
         plugins: {

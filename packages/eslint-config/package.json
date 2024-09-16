@@ -6,6 +6,12 @@
     "main": "index.js",
     "type": "module",
     "license": "MIT",
+    "exports": {
+        ".": "./index.js",
+        "./react": "./react.js",
+        "./typescript": "./typescript.js",
+        "./javascript": "./javascript.js"
+    },
     "dependencies": {
         "@banjoanton/eslint-config-prettier": "workspace:*",
         "@eslint/eslintrc": "^3.1.0",

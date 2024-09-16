@@ -1,7 +1,7 @@
 import globals from "globals";
 import js from "@eslint/js";
 
-export const defaultConfig = [
+export default [
     js.configs.recommended,
     {
         ignores: [

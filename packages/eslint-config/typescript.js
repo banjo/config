@@ -1,7 +1,7 @@
 import tseslint from "typescript-eslint";
 import tsParser from "@typescript-eslint/parser";
 
-export const typescriptConfig = [
+export default [
     ...tseslint.configs.recommended,
     {
         files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
