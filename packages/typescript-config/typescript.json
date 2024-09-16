@@ -14,7 +14,8 @@
         "allowJs": true,
         "resolveJsonModule": true,
         "moduleDetection": "force",
-        "verbatimModuleSyntax": true,
-        "noImplicitOverride": true
+        "verbatimModuleSyntax": false,
+        "noImplicitOverride": true,
+        "preserveSymlinks": false
     }
 }
