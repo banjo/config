@@ -25,6 +25,7 @@ export default [
             "@typescript-eslint/no-empty-function": "off",
             "@typescript-eslint/no-namespace": "off",
             "@typescript-eslint/no-explicit-any": "warn",
+            "@typescript-eslint/no-empty-interface": "off",
         },
     },
 ];
