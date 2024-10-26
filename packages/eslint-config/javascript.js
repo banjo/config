@@ -37,7 +37,7 @@ export default [
             "object-shorthand": "warn",
             "arrow-body-style": "warn",
             "no-unmodified-loop-condition": "warn",
-
+            "no-redeclare": "off",
             "no-use-before-define": [
                 "error",
                 {
