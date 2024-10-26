@@ -1,5 +1,6 @@
 import globals from "globals";
 import js from "@eslint/js";
+import tsParser from "@typescript-eslint/parser";
 
 export default [
     js.configs.recommended,
@@ -22,6 +23,9 @@ export default [
                 ...globals.jest,
                 ...globals.node,
             },
+            parser: tsParser,
+            ecmaVersion: "latest",
+            sourceType: "module",
         },
         rules: {
             "no-unused-vars": "off",
