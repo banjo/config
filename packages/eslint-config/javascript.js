@@ -72,7 +72,6 @@ export default [
                     memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
                 },
             ],
-
             "spaced-comment": [
                 "warn",
                 "always",
