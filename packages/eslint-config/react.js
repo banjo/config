@@ -16,7 +16,7 @@ export default [
         rules: {
             "react/button-has-type": "warn",
             "react/default-props-match-prop-types": "warn",
-            "react/forbid-component-props": "warn",
+            "react/forbid-component-props": "off",
             "react/hook-use-state": "warn",
             "react/iframe-missing-sandbox": "warn",
             "react/jsx-boolean-value": "warn",
