@@ -1,6 +1,6 @@
 {
     "name": "@banjoanton/eslint-config",
-    "version": "0.2.16",
+    "version": "0.2.17",
     "description": "My ESLint config",
     "repository": "banjo/eslint-config",
     "main": "index.js",
