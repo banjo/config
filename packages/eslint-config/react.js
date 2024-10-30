@@ -6,7 +6,7 @@ export default [
         files: ["**/*.jsx", "**/*.tsx"],
         plugins: {
             react,
-            reactHooks,
+            "react-hooks": reactHooks,
         },
         settings: {
             react: {
@@ -14,6 +14,7 @@ export default [
             },
         },
         rules: {
+            ...reactHooks.configs.recommended.rules,
             "react/button-has-type": "warn",
             "react/default-props-match-prop-types": "warn",
             "react/forbid-component-props": "off",
