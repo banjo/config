@@ -2,7 +2,14 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 
 export default [
-    reactHooks.configs["recommended-latest"],
+    {
+        files: ["**/*.{js,jsx}"],
+        plugins: { "react-hooks": reactHooks },
+        rules: {
+            "react-hooks/rules-of-hooks": "error",
+            "react-hooks/exhaustive-deps": "warn",
+        },
+    },
     {
         files: ["**/*.jsx", "**/*.tsx"],
         plugins: {
@@ -14,7 +21,6 @@ export default [
             },
         },
         rules: {
-            ...reactHooks.configs.recommended.rules,
             "react/button-has-type": "warn",
             "react/default-props-match-prop-types": "warn",
             "react/forbid-component-props": "off",
