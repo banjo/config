@@ -10,7 +10,7 @@ pnpm install @banjoanton/eslint-config
 
 ## Usage
 
-Add this to your eslint file:
+For ESLint v8:
 
 ```json
 {
@@ -18,7 +18,7 @@ Add this to your eslint file:
 }
 ```
 
-Full config with eslint v9:
+For ESLint v9:
 
 ```js
 import eslintConfig from "@banjoanton/eslint-config";
