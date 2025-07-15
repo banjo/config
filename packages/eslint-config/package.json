@@ -14,15 +14,15 @@
     },
     "dependencies": {
         "@banjoanton/eslint-config-prettier": "workspace:*",
-        "@eslint/eslintrc": "^3.1.0",
-        "@eslint/js": "^9.10.0",
-        "@typescript-eslint/parser": "^8.5.0",
+        "@eslint/eslintrc": "^3.3.1",
+        "@eslint/js": "^9.31.0",
+        "@typescript-eslint/parser": "^8.37.0",
         "eslint-plugin-banjo": "workspace:*",
-        "eslint-plugin-import-x": "^4.2.1",
-        "eslint-plugin-react": "^7.36.1",
+        "eslint-plugin-import-x": "^4.16.1",
+        "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^5.2.0",
-        "globals": "^15.9.0",
-        "typescript-eslint": "^8.5.0"
+        "globals": "^16.3.0",
+        "typescript-eslint": "^8.37.0"
     },
     "scripts": {
         "release": "bumpp --no-tag --no-commit --all && pnpm publish"
@@ -31,6 +31,6 @@
         "eslint": "^9.10.0"
     },
     "devDependencies": {
-        "bumpp": "^9.5.2"
+        "bumpp": "^10.2.0"
     }
 }
