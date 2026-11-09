@@ -1,6 +1,6 @@
 {
     "name": "@banjoanton/lanelint-config",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "My lanelint config: Astra with stores, repositories and controllers.",
     "repository": "banjo/config",
     "license": "MIT",

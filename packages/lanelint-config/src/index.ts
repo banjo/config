@@ -81,8 +81,6 @@ export const banjo = (options: BanjoOptions = {}) => {
                 },
             ],
             "conventions/root-only-files": ["error", { names: ["index.ts"] }],
-            "conventions/directory-case": ["error", { case: "kebab" }],
-            "conventions/file-name-case": ["error", { case: ["camel", "pascal"] }],
             "conventions/file-name-pattern": [
                 "error",
                 {
@@ -122,6 +120,15 @@ export const banjo = (options: BanjoOptions = {}) => {
             ],
         },
         overrides: [
+            {
+                description:
+                    "Naming cases apply to source code only, not to files like pnpm-lock.yaml.",
+                files: [`${root}/**`],
+                rules: {
+                    "conventions/directory-case": ["error", { case: "kebab" }],
+                    "conventions/file-name-case": ["error", { case: ["camel", "pascal"] }],
+                },
+            },
             {
                 description: "Named exports only, except in stories.",
                 files: [`${root}/**`],

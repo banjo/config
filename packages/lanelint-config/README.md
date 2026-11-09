@@ -47,6 +47,7 @@ src/
 ```
 
 - Directories are kebab-case, files are PascalCase (`UserService.ts`), hooks are `useUser.ts`.
+  The naming cases only apply inside `root`, so files like `pnpm-lock.yaml` are not checked.
 - A file exports one value named after the file (`UserService`).
 - Named exports only.
 - The roles, including `stores`, `repositories` and `controllers`, come from Astra.
