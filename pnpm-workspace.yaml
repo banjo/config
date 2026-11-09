@@ -4,8 +4,8 @@ allowBuilds:
   esbuild: true
   unrs-resolver: true
 minimumReleaseAgeExclude:
-    - "@lanelint/core@0.1.0"
-    - "@lanelint/plugin-boundaries@0.1.0"
-    - "@lanelint/plugin-conventions@0.1.0"
-    - "@lanelint/presets@0.1.0"
-    - lanelint@0.1.0
+    - "@lanelint/core@0.0.3"
+    - "@lanelint/plugin-boundaries@0.0.3"
+    - "@lanelint/plugin-conventions@0.0.3"
+    - "@lanelint/presets@0.0.3"
+    - lanelint@0.0.3
