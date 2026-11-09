@@ -30,16 +30,8 @@ const toGlob = (root: string) => root.replace(/:\w+/g, "*").replace(/\/$/, "");
 export const banjo = (options: BanjoOptions = {}) => {
     const root = toGlob(options.root ?? "src");
 
-    return defineConfigFragment({
+    const rules = defineConfigFragment({
         plugins: [boundaries, conventions],
-        extends: [
-            boundaries.configs.recommended,
-            conventions.configs.recommended,
-            astra({
-                root: options.root,
-                roles: options.roles,
-            }),
-        ],
         rules: {
             "conventions/allowed-directories": [
                 "error",
@@ -76,10 +68,14 @@ export const banjo = (options: BanjoOptions = {}) => {
                             name: "{utils,helpers}.ts",
                             message: "Split utils by entity, such as utils/UserUtil.ts.",
                         },
-                        { name: "index.tsx", message: "Name the component file after the component." },
+                        {
+                            name: "index.tsx",
+                            message: "Name the component file after the component.",
+                        },
                         {
                             name: `${root}/{features,common}/*/!(index.ts)`,
-                            message: "Put the file in a role directory, such as components/ or utils/.",
+                            message:
+                                "Put the file in a role directory, such as components/ or utils/.",
                         },
                     ],
                 },
@@ -104,11 +100,20 @@ export const banjo = (options: BanjoOptions = {}) => {
                         { directory: "stores", pattern: "{,use}[A-Z]*Store.ts" },
                         { directory: "utils", pattern: "[A-Z]*Util.ts" },
                         { directory: "__tests__", pattern: "*.test.{ts,tsx}" },
-                        { directory: "**/containers/__tests__", pattern: "[A-Z]*Container.test.tsx" },
-                        { directory: "**/controllers/__tests__", pattern: "[A-Z]*Controller.test.ts" },
+                        {
+                            directory: "**/containers/__tests__",
+                            pattern: "[A-Z]*Container.test.tsx",
+                        },
+                        {
+                            directory: "**/controllers/__tests__",
+                            pattern: "[A-Z]*Controller.test.ts",
+                        },
                         { directory: "**/hooks/__tests__", pattern: "use[A-Z]*.test.{ts,tsx}" },
                         { directory: "**/mappers/__tests__", pattern: "[A-Z]*Mapper.test.ts" },
-                        { directory: "**/repositories/__tests__", pattern: "[A-Z]*Repository.test.ts" },
+                        {
+                            directory: "**/repositories/__tests__",
+                            pattern: "[A-Z]*Repository.test.ts",
+                        },
                         { directory: "**/services/__tests__", pattern: "[A-Z]*Service.test.ts" },
                         { directory: "**/stores/__tests__", pattern: "{,use}[A-Z]*Store.test.ts" },
                         { directory: "**/utils/__tests__", pattern: "[A-Z]*Util.test.ts" },
@@ -124,8 +129,7 @@ export const banjo = (options: BanjoOptions = {}) => {
                 rules: { "conventions/no-default-export": "error" },
             },
             {
-                description:
-                    "Each file exports a value named after the file, such as UserService.",
+                description: "Each file exports a value named after the file, such as UserService.",
                 files: [
                     `${root}/**/{components,containers,contexts,controllers,hooks,mappers,repositories,services,stores,utils}/*`,
                 ],
@@ -134,4 +138,15 @@ export const banjo = (options: BanjoOptions = {}) => {
             },
         ],
     });
+
+    // lanelint only reads `extends` from the top-level config, so return the fragments in order.
+    return [
+        boundaries.configs.recommended,
+        conventions.configs.recommended,
+        astra({
+            root: options.root,
+            roles: options.roles,
+        }),
+        rules,
+    ] as const;
 };

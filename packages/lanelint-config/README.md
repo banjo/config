@@ -17,9 +17,11 @@ import { banjo } from "@banjoanton/lanelint-config";
 import { defineConfig } from "lanelint";
 
 export default defineConfig({
-    extends: [banjo()],
+    extends: banjo(),
 });
 ```
+
+`banjo()` returns a list of fragments. To add more, spread it: `extends: [...banjo(), other]`.
 
 For a monorepo app: `banjo({ root: "apps/:app/src" })`.
 

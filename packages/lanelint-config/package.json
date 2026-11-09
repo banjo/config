@@ -16,16 +16,17 @@
         "release": "bumpp --no-tag --no-commit --all && pnpm publish"
     },
     "dependencies": {
-        "@lanelint/plugin-boundaries": "^0.0.2",
-        "@lanelint/plugin-conventions": "^0.0.2",
-        "@lanelint/presets": "^0.0.2"
+        "@lanelint/plugin-boundaries": "^0.1.0",
+        "@lanelint/plugin-conventions": "^0.1.0",
+        "@lanelint/presets": "^0.1.0"
     },
     "peerDependencies": {
-        "lanelint": "^0.0.2"
+        "lanelint": "^0.1.0"
     },
     "devDependencies": {
+        "@banjoanton/typescript-config": "workspace:*",
         "@types/node": "^22.0.0",
-        "lanelint": "^0.0.2",
+        "lanelint": "^0.1.0",
         "typescript": "^5.8.3"
     },
     "engines": {
